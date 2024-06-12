@@ -20,7 +20,7 @@ const Account = () => {
         type: 'updateinfo',
         username: username,
         password: password,
-        phonenumber: phone,
+        phone_number: phone,
       };
       window.chrome.webview.postMessage(data);
       toast.success('Đăng xuất sau 2 giây');
@@ -34,7 +34,7 @@ const Account = () => {
     if (Object.keys(parsedData).length > 0) {
       const data: ResponseInfo = JSON.parse(parsedData);
       setUsername(data.Username);
-      setPhone(data.PhoneNumber);
+      setPhone(data.phone_number);
     }
   }, [username]);
   return (

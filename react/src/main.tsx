@@ -51,7 +51,7 @@ declare global {
     Type: boolean;
     Username: string;
     Password: string;
-    PhoneNumber: string;
+    phone_number: string;
   }
 }
 ReactDOM.createRoot(document.getElementById('root')!).render(

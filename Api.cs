@@ -67,7 +67,7 @@ namespace THPTAdminSystem
                 JsonElement data = JsonSerializer.Deserialize<dynamic>(message);
                 string receivedUsername = "";
                 string receivedPassword = "";
-                string receivedPhonenumber = "";
+                string receivedphone_number = "";
                 if (data.TryGetProperty("username", out JsonElement keyUserName))
                 {
                     receivedUsername = keyUserName.GetString();
@@ -75,13 +75,13 @@ namespace THPTAdminSystem
                     {
                         receivedPassword = keyPassword.GetString();
                     }
-                    if (data.TryGetProperty("phonenumber", out JsonElement keyPhonenumber))
+                    if (data.TryGetProperty("phone_number", out JsonElement keyphone_number))
                     {
-                        receivedPhonenumber = keyPhonenumber.GetString();
+                        receivedphone_number = keyphone_number.GetString();
                     }
                 }
                 Database db = new Database();
-                db.UpdateInfo(receivedUsername, receivedPassword, receivedPhonenumber);
+                db.UpdateInfo(receivedUsername, receivedPassword, receivedphone_number);
             }
             else
             {

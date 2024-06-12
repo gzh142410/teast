@@ -42,3 +42,5 @@ desktop.ini
 *.orig
 *.rej
 package-lock.json
+database/
+database.db

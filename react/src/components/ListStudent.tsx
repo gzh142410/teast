@@ -8,13 +8,13 @@ interface ListProps {
   students: {
     Username: string;
     Name: string;
-    PhoneNumber: string;
+    phone_number: string;
   }[];
 }
 interface Student {
   Username: string;
   Name: string;
-  PhoneNumber: string;
+  phone_number: string;
 }
 const ListStudent = () => {
   const [students, setStudents] = useState<Student[]>([]);
@@ -102,7 +102,7 @@ const List: React.FC<ListProps> = ({ students }) => {
           <strong>
             {index + 1}. {student.Name}
           </strong>
-          {student.PhoneNumber && ` - ${student.PhoneNumber}`}
+          {student.phone_number && ` - ${student.phone_number}`}
         </li>
       ))}
     </ul>
