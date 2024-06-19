@@ -163,6 +163,7 @@ namespace THPTAdminSystem
             }
             catch
             {
+
                 throw;
             }
         }

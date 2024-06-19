@@ -1,31 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{title}</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THPT Admin System</title>
+  </head>
 
-    <body class='text-indigo-500'>
-        <div class='text-indigo-400'>
-            <b class='text-indigo-500'>Tiêu đều:</b>
-            <div id="title"></div>
-        </div>
-        <div class='text-indigo-400'><b class='text-indigo-500'>Mô tả:</b>
-            <div id='description'></div>
-        </div>
-        <adu class='text-indigo-400'><b class='text-indigo-500'>Body</b>
-            <div id='pre'>Trang web không có thẻ body</div>
-        </adu>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                document.getElementById('title').innerText = { title };
-                document.getElementById('description').innerText = { description };
-                document.getElementById('pre').innerText = { body };
-            });
-        </script>
-    </body>
+  <body>
+    <div id="root" class="max-h-screen overflow-hidden"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      // document.addEventListener('keydown', (e) => {
+      //   if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'I') {
+      //     e.preventDefault();
+      //   }
+      //   if (e.key === 'F12') {
+      //     e.preventDefault();
+      //     displayMessage();
+      //   }
+      // });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'F5' || (e.ctrlKey && e.key === 'r')) {
+          e.preventDefault();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.ctrlKey && event.key === 'u') {
+          event.preventDefault();
+        }
+      });
+
+      document.addEventListener('copy', (e) => {
+        e.preventDefault();
+      });
+
+      document.addEventListener('cut', (e) => {
+        e.preventDefault();
+      });
+    </script>
+  </body>
 
 </html>
